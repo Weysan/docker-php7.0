@@ -9,8 +9,8 @@ web:
     environment:
       - ALLOW_OVERRIDE=true
     links:
-      - db:db
-      - maildev:maildev
+      - db:"db"
+      - maildev:"maildev"
 
 db:
     image: mysql
