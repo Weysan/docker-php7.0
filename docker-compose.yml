@@ -26,4 +26,7 @@ maildev:
         - "1080:80"
 
 elasticsearch:
-    image: elasticsearch:latest
+    image: elasticsearch:1.7
+    ports:
+        - "9200:9200"
+        - "9300:9300"
