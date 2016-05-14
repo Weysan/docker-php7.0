@@ -37,7 +37,7 @@ RUN ( \
     ) > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 #SSL CONFIG
-RUN mkdir -p /usr/local/apache/config
+RUN mkdir -p /usr/local/apache/conf
 ADD ssl/server.crt /usr/local/apache/conf/ssl.crt
 ADD ssl/server.key /usr/local/apache/conf/ssl.key
 
