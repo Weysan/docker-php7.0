@@ -2,8 +2,9 @@ web:
     build: php
     ports:
         - "80:80"
+        - "443:443"
     volumes:
-        - /var/www:/var/www/html
+        - /var/www/sources:/var/www/html
         - /var/www/docker/php.ini:/usr/local/etc/php/conf.d/30-custom.ini
         - /var/www/docker/sites:/etc/apache2/sites-enabled
     environment:
@@ -26,4 +27,7 @@ maildev:
         - "1080:80"
 
 elasticsearch:
-    image: elasticsearch:latest
+    image: elasticsearch:1.7
+    ports:
+        - "9200:9200"
+        - "9300:9300"
