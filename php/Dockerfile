@@ -3,6 +3,7 @@ FROM php:7.0-apache
 RUN a2enmod vhost_alias
 RUN a2enmod rewrite
 RUN a2enmod ssl
+
 	
 # APC
 RUN pear config-set php_ini /usr/local/etc/php/php.ini
@@ -12,16 +13,13 @@ RUN pecl install apc redis memcached
 RUN apt-get update && apt-get install -y \
 	openssl \
 	mysql-client \
-    libapache2-mod-fcgid \
-	libfreetype6-dev \
-	libjpeg62-turbo-dev \
-	libmcrypt-dev \
-	libpng12-dev \
-	sendmail \
-	libicu-dev \
+        libapache2-mod-fcgid \
+		libfreetype6-dev \
+		libjpeg62-turbo-dev \
+		libmcrypt-dev \
+		libpng12-dev \
+		sendmail \
  	&& docker-php-ext-install mysqli \
- 	&& docker-php-ext-install intl \
- 	&& docker-php-ext-install zip \
 	&& docker-php-ext-install opcache \
  	&& docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mbstring \
