@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
 		libmcrypt-dev \
 		libpng12-dev \
 		sendmail \
+		git \
  	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-install opcache \
  	&& docker-php-ext-install pdo_mysql \
